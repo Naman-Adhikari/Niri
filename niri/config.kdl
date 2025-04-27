@@ -1,5 +1,8 @@
 spawn-at-startup "hyprpaper"
 spawn-at-startup "waybar"
+hotkey-overlay {
+    skip-at-startup
+}
 input {
     keyboard {
         xkb {
