@@ -1,8 +1,14 @@
-spawn-at-startup "hyprpaper"
-spawn-at-startup "waybar"
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "~/bash/wallpaper.sh"
+
+environment {
+DISPLAY ":0"
+}
+
 hotkey-overlay {
     skip-at-startup
 }
+
 input {
     keyboard {
         xkb {
@@ -48,10 +54,9 @@ output "HDMI-A-1" {
 
 
 layout {
-    gaps 10
+    gaps 15
     center-focused-column "never"
     always-center-single-column
-    empty-workspace-above-first
     default-column-display "tabbed"
 
     preset-column-widths {
@@ -168,7 +173,7 @@ window-rule {
 
 
 window-rule {
-    geometry-corner-radius 30
+    geometry-corner-radius 00
     clip-to-geometry true
 	opacity 0.99
 	draw-border-with-background false
@@ -177,7 +182,7 @@ window-rule {
 window-rule {
     match is-floating=true
 
-    baba-is-float true
+    baba-is-float false
 }
 
 
@@ -222,12 +227,16 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
+    Mod+O {spawn "bash" "-c" "ollama serve";} 
+	Mod+Shift+O { spawn "bash" "-c" "pkill -f 'ollama serve'";}
+
+
     Mod+Q { close-window; }
 	Mod+E { spawn "nemo";}
 	Mod+B { spawn "one.ablaze.floorp";}
 	Mod+Shift+W { spawn "bash" "-c" "pkill waybar || waybar &";}
 	Mod+0 { spawn "bash" "-c" "shutdown now";}
-	Ctrl+Shift+R { spawn "bash" "-c" "sudo reboot";}
+	Ctrl+Shift+R { spawn "bash" "-c" " reboot";}
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
