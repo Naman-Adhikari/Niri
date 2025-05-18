@@ -227,8 +227,6 @@ binds {
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
 
-    Mod+O {spawn "bash" "-c" "ollama serve";} 
-	Mod+Shift+O { spawn "bash" "-c" "pkill -f 'ollama serve'";}
 
 
     Mod+Q { close-window; }
