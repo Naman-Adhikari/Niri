@@ -234,6 +234,7 @@ binds {
 	Mod+Shift+W { spawn "bash" "-c" "pkill waybar || waybar &";}
 	Mod+0 { spawn "bash" "-c" "shutdown now";}
 	Ctrl+Shift+R { spawn "bash" "-c" " reboot";}
+	Mod+S { spawn "com.spotify.Client";}
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
