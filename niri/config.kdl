@@ -1,5 +1,6 @@
 spawn-at-startup "xwayland-satellite"
-spawn-at-startup "~/bash/wallpaper.sh"
+spawn-at-startup "waybar"
+spawn-at-startup "hyprpaper"
 
 environment {
 DISPLAY ":0"
@@ -163,13 +164,16 @@ animations {
 
 
 window-rule {
-    match app-id=r#"^floorp$"#
+    match app-id=r"firefox"
+    match app-id=r"librewolf"
+	open-maximized true
     opacity 0.99
 }
 
 window-rule {
     opacity 0.75
-	exclude app-id=r#"^floorp$"#
+	exclude app-id="firefox"
+	exclude app-id="librewolf"
 }	
 
 window-rule {
@@ -230,7 +234,7 @@ binds {
 
     Mod+Q { close-window; }
 	Mod+E { spawn "dolphin";}
-	Mod+B { spawn "floorp";}
+	Mod+B { spawn "qutebrowser";}
 	Mod+Shift+W { spawn "bash" "-c" "pkill waybar || waybar &";}
 	Mod+0 { spawn "bash" "-c" "shutdown now";}
 	Ctrl+Shift+R { spawn "bash" "-c" " reboot";}
